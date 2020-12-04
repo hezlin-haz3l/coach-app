@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+class ProfileScreen extends StatefulWidget {
+  @override
+  Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    return Scaffold(
+      backgroundColor: const Color(0xFFE9E9E9),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.vertical(top:Radius.circular(40)),
+      ),
+      child:  BottomNavigationBar(
+          iconSize: 40,
+          selectedIconTheme: IconThemeData(
+            color: const Color(0xFF200087),
+          ),
+          unselectedIconTheme: IconThemeData(
+            color: Colors.black12,
+            items: [
+              BottomNavigationBarItem(
+                icon: Padding(
+                  padding: const EdgeInsets.only(top:8.0),
+                  child: Icon(Icons.home),
+                ),
+                title: Text
+                  ("Home", style: const TextStyle(color: Colors.white),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon:
+                Icon
+                  (Icons.search
+                ),
+                title: Text(
+                  "Search",
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon:
+                Icon(Icons.person
+                ),
+                title:Text(
+                  "Profile",
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ), ,
+          body: Stack(children: <Widget>[
+          Positioned(
+          top: 0,
+          height: height * 0.35,
+      left: 0,
+      right: 0,
+          child: ClipRect(
+          BorderRadius: const BorderRadius.vertical(
+          bottom: const Radius.circular(40),
+    ),
+    color: Container(
+    color: Colors.white,
+    )
+    ),
+    ),
+    ]),
+    );
+  }
+}
